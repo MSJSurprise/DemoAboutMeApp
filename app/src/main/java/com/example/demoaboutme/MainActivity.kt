@@ -6,33 +6,32 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import com.example.demoaboutme.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var etNickname: EditText
-    lateinit var btnDone: Button
-    lateinit var tvNicknameResult: TextView
+    private lateinit var binding: ActivityMainBinding
+    private val myName: MyName = MyName("John Moss")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        etNickname = findViewById(R.id.etNickname)
-        btnDone = findViewById(R.id.btnDone)
-        tvNicknameResult = findViewById(R.id.tvNicknameResult)
+        binding.myName = myName
 
-        btnDone.setOnClickListener {
+        binding.btnDone.setOnClickListener {
             addNickname(it)
         }
     }
 
     private fun addNickname(view: View) {
-//        val etNickname: EditText = findViewById(R.id.etNickname)
-//        val btnDone: Button = findViewById(R.id.btnDone)
-//        val tvNicknameResult: TextView = findViewById(R.id.tvNicknameResult)
-        tvNicknameResult.text = etNickname.text
-        btnDone.visibility = View.GONE
-        etNickname.visibility = View.GONE
-        tvNicknameResult.visibility = View.VISIBLE
+        binding.apply {
+            myName?.nickname = etNickname.text.toString()
+            invalidateAll()
+            btnDone.visibility = View.GONE
+            etNickname.visibility = View.GONE
+            tvNicknameResult.visibility = View.VISIBLE
+        }
     }
 }
