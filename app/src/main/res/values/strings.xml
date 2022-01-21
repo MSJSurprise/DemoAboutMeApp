@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Demo About Me</string>
+    <string name="bio">Hi, my is John Moss.\n
+        \nSMS is a text messaging service component of most telephone,
+        \nInternet, and mobile device systems.\n
+        \nIt uses standardized communication protocols
+        \nthat let mobile devices exchange short text messages.\n
+        \nAn intermediary service can facilitate a text-to-voice
+        \nconversion to be sent to landlines. Wikipedia\n
+        \nI go to school in the presence of my enemy\n
+        \nThat anointed my head with oil and\n
+        \nmy cup run over surely\n\n surely goodness and mercy shall follow me\n
+        \n all the days of my life and\n I shall join the house of the lord
+        \n forever and ever Amen</string>
+</resources>
